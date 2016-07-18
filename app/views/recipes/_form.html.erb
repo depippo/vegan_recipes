@@ -1,15 +1,15 @@
 <%= form_for @recipe do |f|%>
 <p>
-  <%= f.label :name %>
+  <%= f.label :name %>:
   <%= f.text_field :name %>
 
-  <%= f.label :content %>
+  <%= f.label :content %>:
   <%= f.text_field :content %>
 
-  <%= f.label :preptime %>
+  <%= f.label :preptime %> (minutes):
   <%= f.number_field :preptime %>
 
-  <%= f.label :servings %>
+  <%= f.label :servings %>:
   <%= f.number_field :servings %>
 
   <%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name %>
