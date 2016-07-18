@@ -3,7 +3,7 @@ class CreateRecipes < ActiveRecord::Migration
     create_table :recipes do |t|
       t.string :name
       t.text :content
-      t.time :preptime
+      t.integer :preptime
       t.integer :servings
 
       t.timestamps null: false
