@@ -4,4 +4,8 @@ class IngredientsController < ApplicationController
     @ingredient = Ingredient.find(params[:id])
   end
 
+  def index
+    @ingredients = Ingredient.all
+  end
+
 end
