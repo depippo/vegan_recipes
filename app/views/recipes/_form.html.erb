@@ -4,7 +4,7 @@
   <%= f.text_field :name %>
   <br>
   <%= f.label :content %>:
-  <%= f.text_area :content %>
+  <%= f.text_area :content,  cols: "30", rows: "10" %>
 
   <%= f.label :preptime %> (minutes):
   <%= f.number_field :preptime %>
@@ -12,9 +12,12 @@
   <%= f.label :servings %>:
   <%= f.number_field :servings %>
 
-  <%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name %>
+  <%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name %> <br>
   <%= f.fields_for :ingredients, @recipe.ingredients.build do |ingredients_fields| %>
-    <%= ingredients_fields.text_field :name %>
+    <% 5.times do %>
+      <%= ingredients_fields.label "Add ingredient" %>:
+      <%= ingredients_fields.text_field :name %>
+    <% end %>
   <% end %>
 </p>
 
