@@ -1,1 +1,9 @@
 <h1> <%= @recipe.name %> </h1>
+<h3>Makes <%= @recipe.servings %> servings.</h3>
+<h3>Prep time: <%= @recipe.preptime %> minutes.</h3>
+<h3>Required ingredients:</h3>
+<% @recipe.ingredients.each do |ingredient| %>
+  <%= link_to ingredient.name, ingredient_path(ingredient) %>
+<% end %>
+
+<p><%= @recipe.content %> </p>
