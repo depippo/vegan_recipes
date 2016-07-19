@@ -6,7 +6,8 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.create(recipe_params)
+    @recipe = Recipe.new(recipe_params)
+    @recipe.save
     redirect_to recipe_path(@recipe)
   end
 
@@ -32,7 +33,7 @@ class RecipesController < ApplicationController
   end
 
   def recipe_params
-    params.require(:recipe).permit(:name, :content, :preptime, :servings, ingredient_ids: [])
+    params.require(:recipe).permit(:name, :content, :preptime, :servings, ingredient_ids: [], ingredients_attributes: [:name])
   end
 
 end
