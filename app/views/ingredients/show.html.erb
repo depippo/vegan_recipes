@@ -1,6 +1,8 @@
 <h2><%= @ingredient.name %> </h2>
 
-<h4>Used in these recipes:</h4>
-<% @ingredient.recipes.each do |recipe| %>
-  <%= link_to recipe.name, recipe_path(recipe) %>
+<% if !@ingredient.recipes.empty? %>
+  <h4>Used in these recipes:</h4>
+  <% @ingredient.recipes.each do |recipe| %>
+    <%= link_to recipe.name, recipe_path(recipe) %>
+  <% end %>
 <% end %>
