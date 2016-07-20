@@ -13,7 +13,7 @@ class IngredientsController < ApplicationController
   end
 
   def create
-    @ingredient = Ingredient.where('lower(name) = ?', ingredient_params[:name].downcase).first_or_create
+    @ingredient = Ingredient.where(name: ingredient_params[:name].downcase).first_or_create
     redirect_to ingredient_path(@ingredient)
   end
 
