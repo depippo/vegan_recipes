@@ -5,9 +5,12 @@ class Recipe < ActiveRecord::Base
   
   def ingredients_attributes=(ingredient_attributes)
     ingredient_attributes.values.each do |ingredient_attribute|
-      ingredient = Ingredient.find_or_create_by(ingredient_attribute)
-      self.ingredients << ingredient
+      unless ingredient_attribute['name'] == ""
+        ingredient = Ingredient.where(name: ingredient_attribute[:name].downcase).first_or_create
+        self.ingredients << ingredient
+      end
     end
   end
 
 end
+
