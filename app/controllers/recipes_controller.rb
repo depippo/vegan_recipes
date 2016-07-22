@@ -12,6 +12,7 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @rating = Rating.new
   end
 
   def index
@@ -33,7 +34,8 @@ class RecipesController < ApplicationController
   end
 
   def recipe_params
-    params.require(:recipe).permit(:name, :content, :preptime, :servings,:ingredients_attributes => [:name], :ingredient_ids => [])
+    params.require(:recipe).permit(:name, :content, :preptime, :servings,
+      :ingredients_attributes => [:name], :ingredient_ids => [])
   end
 
 end

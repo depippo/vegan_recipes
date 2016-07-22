@@ -1,0 +1,6 @@
+<%= form_for [@recipe, @rating] do |f| %>
+  <%= fields_for :rating, @recipe.ratings.build do |ratings_fields| %>
+    <%= ratings_fields.select :score, (1..5) %>
+  <% end %>
+  <%= f.submit "Rate this recipe"%>
+<% end %>

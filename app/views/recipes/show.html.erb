@@ -7,3 +7,13 @@
 <% end %>
 
 <p><%= @recipe.content %> </p>
+
+<p><%= render 'rating' %></p>
+
+
+  <p>
+  <% @recipe.ratings.each do |rating| %>
+    Score: <%= rating.score %>
+    ID: <%= rating.id %>
+  <% end %>
+  </p>
