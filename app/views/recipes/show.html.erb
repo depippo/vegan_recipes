@@ -11,10 +11,7 @@
 
 <p><%= render 'rating' %></p>
 
-
-  <p>
-  <% @recipe.ratings.each do |rating| %>
-    Score: <%= rating.score %>
-    ID: <%= rating.id %>
-  <% end %>
-  </p>
+<% if @recipe.ratings.count > 0 %>
+  <p> Average score: <%= @recipe.average_score.round(2) %> <br>
+  (<%= @recipe.ratings.count %> reviews) </p>
+<% end %>

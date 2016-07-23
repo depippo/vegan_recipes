@@ -13,4 +13,14 @@ class Recipe < ActiveRecord::Base
     end
   end
 
+  def average_score
+    scores = []
+    self.ratings.each do |rating|
+      unless rating.score.nil?
+        scores << rating.score
+      end
+    end
+    scores.inject{ |sum, el| sum + el }.to_f / scores.size
+  end
+
 end
