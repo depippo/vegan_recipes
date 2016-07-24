@@ -5,3 +5,8 @@
 </ul>
 
 <%= link_to "Add recipe", new_recipe_path %>
+
+<h4>Highest rated recipe:</h4>
+<p>
+<%= Recipe.highest_rated.name %> - Average rating: <%= Recipe.highest_rated.average_score %>
+</p>

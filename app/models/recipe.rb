@@ -24,4 +24,8 @@ class Recipe < ActiveRecord::Base
     scores.inject{ |sum, el| sum + el }.to_f / scores.size
   end
 
+  def self.highest_rated
+    self.all.max_by(&:average_score)
+  end
+
 end
