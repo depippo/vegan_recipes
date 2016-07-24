@@ -14,7 +14,11 @@ class IngredientsController < ApplicationController
 
   def create
     @ingredient = Ingredient.where(name: ingredient_params[:name].downcase).first_or_create
-    redirect_to ingredient_path(@ingredient)
+    if @ingredient.save
+      redirect_to ingredient_path(@ingredient)
+    else
+      render :new
+    end
   end
 
   private
