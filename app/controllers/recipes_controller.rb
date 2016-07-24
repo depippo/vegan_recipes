@@ -7,8 +7,11 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = current_user.recipes.create(recipe_params)
-    @recipe.save
-    redirect_to recipe_path(@recipe)
+    if @recipe.save
+      redirect_to recipe_path(@recipe)
+    else
+      render :new
+    end
   end
 
   def show
