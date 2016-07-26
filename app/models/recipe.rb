@@ -28,4 +28,9 @@ class Recipe < ActiveRecord::Base
     self.all.max_by(&:average_score)
   end
 
+  def user_score(recipe, user)
+    rating = Rating.where(recipe_id: recipe, user_id: user).first
+    rating.score
+  end
+
 end
