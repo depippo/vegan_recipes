@@ -25,7 +25,13 @@ class Recipe < ActiveRecord::Base
   end
 
   def self.highest_rated
-    self.all.max_by(&:average_score)
+    recipes_with_ratings = []
+    self.all.each do |recipe|
+      if recipe.ratings.count > 0
+        recipes_with_ratings << recipe
+      end
+    end 
+    recipes_with_ratings.max_by(&:average_score)
   end
 
   def user_score(recipe, user)
