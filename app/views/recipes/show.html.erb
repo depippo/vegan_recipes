@@ -9,12 +9,12 @@
 
 <p><%= @recipe.content %> </p>
 
-<% if @recipe.ratings.count > 0 %>
-  <% if @recipe.ratings.map(&:user_id).include? current_user.id %>
+<% if @recipe.user.id != current_user.id %>
+  <% if (@recipe.ratings.count > 0) && (@recipe.ratings.map(&:user_id).include? current_user.id) %>
     <p>Your rating: <%= @recipe.user_score(@recipe.id, current_user.id) %> </p>
-    <% end %>
   <% else %>
-    <p><%= render 'rating' %></p> 
+    <p><%= render 'rating' %></p>
+  <% end %>
 <% end %>
 
 <% if @recipe.ratings.count > 0 %>
