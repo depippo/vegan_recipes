@@ -3,6 +3,7 @@ class Recipe < ActiveRecord::Base
   has_many :recipe_ingredients
   has_many :ingredients, through: :recipe_ingredients
   has_many :ratings
+  has_many :photos
   validates :name, :content, :preptime, :servings, :ingredients, presence: true
   
   def ingredients_attributes=(ingredient_attributes)

@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  resources :photos
   resources :ingredients
   resources :recipes do
     resources :ratings
+    resources :photos
   end
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   #devise_scope :user do
