@@ -1,3 +1,8 @@
-<% @photos.each do |photo|%>
-<%= image_tag photo.image %>
+<% if @photos.count > 0 %>
+  <% @photos.each do |photo|%>
+  <%= image_tag photo.image %>
+  <% end %>
+<% else %>
+  <h3>There are no photos of this recipe yet.</h3>
 <% end %>
+<%= link_to "Upload a photo", new_recipe_photo_path %>

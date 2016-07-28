@@ -21,3 +21,5 @@
   <p> Average score: <%= @recipe.average_score.round(2) %> <br>
   (<%= @recipe.ratings.count %> reviews) </p>
 <% end %>
+
+<%= link_to "Photos of this recipe", recipe_photos_path(@recipe) %>
