@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :photos
   resources :ingredients
   resources :recipes do
     resources :ratings

@@ -17,20 +17,16 @@ class PhotosController < ApplicationController
   end
 
   def new
+    @recipe = Recipe.find(params[:recipe_id])
     @photo = Photo.new
   end
 
   def create
-    uploaded_io = params[:photo][:image]
-    File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'wb') do |file|
-      file.write(uploaded_io.read)
-    end
-    @photo = Photo.new(photo_params)
-    if @photo.save
-      redirect_to photos_path
-    else
-      render 'new'
-    end
+    @recipe = Recipe.find(params[:recipe_id])
+    photo = Photo.new(photo_params)
+    @recipe.photos << photo
+    @recipe.save
+    redirect_to recipe_path(@recipe)
   end
 
   def photo_params
