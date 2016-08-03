@@ -147,16 +147,15 @@ li.horizontal_list a:hover {
   background: #f6f6f6;
 }
 
-div#flash_messages {
+.flash_error {
   color: red;
 }
 
+.flash_alert {
+  color: red;
+}
 
-
-
-
-
-
-
-
+.flash_notice {
+  color: green;
+}
 
