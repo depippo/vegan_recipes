@@ -2,6 +2,7 @@ class PhotosController < ApplicationController
 
   def index
     if params[:recipe_id]
+      @recipe = Recipe.find(params[:recipe_id])
       @photos = Recipe.find(params[:recipe_id]).photos
     else
       @photos = Photo.all

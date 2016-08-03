@@ -13,3 +13,147 @@
  *= require_tree .
  *= require_self
  */
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
+@import "compass/css3";
+
+body {
+  background-color: white;
+  font-family: Helvetica, Verdana, sans-serif
+  font-size: 16px;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  margin: 30px
+}
+
+h1.title {
+  font: 400 36px/1.5 Helvetica, Verdana, sans-serif;
+  letter-spacing: 14px
+  color: black;
+  text-align: left;
+  overflow: hidden;
+  text-decoration: none;
+  margin-top: 0px;
+}
+
+div.list {
+  width: 200px;
+}
+
+h3 {
+  font: 400 26px/1.5 Helvetica, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+    font-family: Helvetica, Verdana, sans-serif;
+  }
+
+ul.list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li.list {
+  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+  border-bottom: 1px solid #ccc;
+}
+
+li.list:last-child {
+  border: none;
+}
+
+li.list a {
+  text-decoration: none;
+  color: #000;
+
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+  display: block;
+  width: 6000px;
+}
+
+li.list a:hover {
+  font-size: 21px;
+  background: #f6f6f6;
+}
+
+div.nav {
+  background-color: #b3d1ff;
+  margin-left: -30px;
+  margin-top: -30px
+}
+
+ul.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li.nav {
+    float: left;
+}
+
+li.nav a {
+    font-family: Helvetica, Verdana, sans-serif;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li.nav a:hover {
+    color: white;
+    background-color: #005ce6;
+}
+
+ul.horizontal_list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li.horizontal_list {
+  display:inline;
+  font: 200 14px/1.5 Helvetica, Verdana, sans-serif;
+  border-bottom: 1px solid #ccc;
+}
+
+li..horizontal_list:last-child {
+  border: none;
+}
+
+li..horizontal_list a {
+  text-decoration: none;
+  color: #000;
+
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+  display: block;
+  width: 6000px;
+}
+
+li.horizontal_list a:hover {
+  font-size: 14px;
+  background: #f6f6f6;
+}
+
+
+
+
+
+
+
+
+
+
+

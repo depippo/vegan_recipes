@@ -1,8 +1,11 @@
 <h2><%= @ingredient.name %> </h2>
 
 <% if !@ingredient.recipes.empty? %>
+  <div class= "list">
   <h4>Used in these recipes:</h4>
   <% @ingredient.recipes.each do |recipe| %>
-    <%= link_to recipe.name, recipe_path(recipe) %>
+  <ul class= "list">
+    <li class= "list"> <%= link_to recipe.name, recipe_path(recipe) %> </li>
   <% end %>
+  </ul>
 <% end %>

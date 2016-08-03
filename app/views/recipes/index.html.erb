@@ -1,12 +1,17 @@
-<ul>
-<% @recipes.each do |recipe| %>
-  <li> <%= link_to recipe.name, recipe_path(recipe) %> </li>
-<% end %>
-</ul>
+<div class= "list">
+  <h3>Recipes</h3> <br>
+  <ul class= "list">
+  <% @recipes.each do |recipe| %>
+    <li class= "list"> <%= link_to recipe.name, recipe_path(recipe) %> </li>
+  <% end %>
+  </ul>
+</div>
 
-<%= link_to "Add recipe", new_recipe_path %>
+<br>
 
-<h4>Highest rated recipe:</h4>
+<h3> <%= link_to "Add a new recipe", new_recipe_path %> </h3> <br>
+
+<h3>Highest rated recipe:</h3>
 <p>
 <%= Recipe.highest_rated.name %> - Average rating: <%= Recipe.highest_rated.average_score %>
 </p>

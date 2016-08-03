@@ -1,8 +1,10 @@
-<h2>Ingredients</h2>
-<ul>
+<div class= "list">
+<h3>Ingredients</h3> <br>
+<ul class="list">
 <% @ingredients.each do |ingredient| %>
-  <li> <%= link_to ingredient.name, ingredient_path(ingredient) %> </li>
+  <li class= "list"> <%= link_to ingredient.name, ingredient_path(ingredient) %> </li>
 <% end %>
 </ul>
+</div>
 
-<%= link_to "Add ingredient", new_ingredient_path %>
+<h3> <%= link_to "Add ingredient", new_ingredient_path %> </h3>

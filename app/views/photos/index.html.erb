@@ -1,8 +1,10 @@
+<h3> <%= @recipe.name %> </h3>
 <% if @photos.count > 0 %>
   <% @photos.each do |photo|%>
   <%= image_tag photo.image %>
   <% end %>
 <% else %>
-  <h3>There are no photos of this recipe yet.</h3>
+  <p>There are no photos of this recipe yet.<p>
 <% end %>
-<%= link_to "Upload a photo", new_recipe_photo_path %>
+
+<h3> <%= link_to "Upload a photo", new_recipe_photo_path %> </h3>
