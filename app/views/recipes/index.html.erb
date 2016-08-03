@@ -10,8 +10,3 @@
 <br>
 
 <h3> <%= link_to "Add a new recipe", new_recipe_path %> </h3> <br>
-
-<h3>Highest rated recipe:</h3>
-<p>
-<%= Recipe.highest_rated.name %> - Average rating: <%= Recipe.highest_rated.average_score %>
-</p>

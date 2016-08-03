@@ -31,6 +31,10 @@ class RecipesController < ApplicationController
     redirect_to recipe_path(@recipe)
   end
 
+  def highest_rated
+    @recipes = Recipe.all
+  end
+
   private
 
   def show_errors

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   authenticate :user do
     resources :ingredients
     resources :users, only: [:index, :show]
+    get 'recipes/highest_rated', to: 'recipes#highest_rated'
     resources :recipes do
       resources :ratings
       resources :photos
