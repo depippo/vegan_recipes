@@ -30,6 +30,8 @@ class PhotosController < ApplicationController
     redirect_to recipe_path(@recipe)
   end
 
+  private
+
   def photo_params
     params.require(:photo).permit(:image)
   end

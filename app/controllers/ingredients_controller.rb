@@ -1,4 +1,5 @@
 class IngredientsController < ApplicationController
+  rescue_from ActiveRecord::RecordNotFound, with: :show_errors
 
   def show
     @ingredient = Ingredient.find(params[:id])
@@ -22,6 +23,11 @@ class IngredientsController < ApplicationController
   end
 
   private
+
+  def show_errors
+    flash[:error] = "Oops, we cannot find that record. Please select an ingredient from the list."
+    redirect_to ingredients_path
+  end
 
   def ingredient_params
     params.require(:ingredient).permit(:name)

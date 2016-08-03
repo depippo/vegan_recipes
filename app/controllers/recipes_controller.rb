@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update]
+  rescue_from ActiveRecord::RecordNotFound, with: :show_errors
 
   def new
     @recipe = Recipe.new
@@ -31,6 +32,11 @@ class RecipesController < ApplicationController
   end
 
   private
+
+  def show_errors
+    flash[:error] = "Oops, we cannot find that record. Please select a recipe from the list."
+    redirect_to recipes_path
+  end
 
   def set_recipe
     @recipe = Recipe.find(params[:id])

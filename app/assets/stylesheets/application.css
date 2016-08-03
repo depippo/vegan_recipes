@@ -147,6 +147,9 @@ li.horizontal_list a:hover {
   background: #f6f6f6;
 }
 
+div#flash_messages {
+  color: red;
+}
 
 
 
