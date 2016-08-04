@@ -24,3 +24,7 @@
 <% end %>
 
 <%= link_to "Photos of this recipe", recipe_photos_path(@recipe) %>
+<br>
+<% if can? :update, @recipe %>
+  <%= link_to "Edit this recipe", edit_recipe_path(@recipe) %>
+<% end %>

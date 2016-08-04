@@ -24,9 +24,11 @@ class RecipesController < ApplicationController
   end
 
   def edit
+    authorize! :edit, @recipe
   end
 
   def update
+    authorize! :update, @recipe
     @recipe.update(recipe_params)
     redirect_to recipe_path(@recipe)
   end
