@@ -2,16 +2,22 @@
   <p>
     <%= f.label :name %>:
     <%= f.text_field :name %>
+    
     <br>
-    <%= f.label :content %>:
-    <%= f.text_area :content,  cols: "30", rows: "10" %>
-
     <%= f.label :preptime %> (minutes):
     <%= f.number_field :preptime %>
 
     <%= f.label :servings %>:
     <%= f.number_field :servings %>
+    
+    <br>
 
+    <%= f.label "Instructions" %>:
+    <%= f.text_area :content,  cols: "80", rows: "20" %>
+
+    <br>
+    <%= f.label "Ingredients" %>:
+    <br>
     <%= f.collection_check_boxes :ingredient_ids, Ingredient.all.sort_by(&:name), :id, :name %> <br>
     <% 5.times do %>
       <%= f.fields_for :ingredients, @recipe.ingredients.build do |ingredients_fields| %>

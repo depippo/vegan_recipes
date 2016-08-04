@@ -37,29 +37,29 @@ cauliflower = Ingredient.create!(:name => "cauliflower")
 onion = Ingredient.create!(:name => "onion")
 thyme = Ingredient.create!(:name => "thyme")
 
-alan_recipe_1 = alan.recipes.create!(user_id: alan.id, name: "Alan's favorite", content: "Content would go here.", preptime: "20", servings: "4",
+alan_recipe_1 = alan.recipes.create!(user_id: alan.id, name: "Alan's favorite", content: "Recipe instructions would go here.", preptime: "20", servings: "4",
   :ingredient_ids => [whole_wheat_spaghetti.id, olive_oil.id, garlic.id, mushrooms.id, sea_salt.id, black_pepper.id, vegetable_broth.id, white_wine.id, parsley.id, bread_crumbs.id])
 
-alan_recipe_2 = alan.recipes.create!(user_id: alan.id, name: "Alan's breakfast", content: "Content would go here.", preptime: "2", servings: "1",
+alan_recipe_2 = alan.recipes.create!(user_id: alan.id, name: "Alan's breakfast", content: "Recipe instructions would go here.", preptime: "2", servings: "1",
   :ingredient_ids => [cereal.id, almond_milk.id])
 
-alan_recipe_3 = alan.recipes.create!(user_id: alan.id, name: "Alan's sandwich", content: "Content would go here.", preptime: "5", servings: "1",
+alan_recipe_3 = alan.recipes.create!(user_id: alan.id, name: "Alan's sandwich", content: "Recipe instructions would go here.", preptime: "5", servings: "1",
   :ingredient_ids => [bread.id, lettuce.id, tomato.id, veganaise.id])
 
-jeff_recipe_1 = jeff.recipes.create!(user_id: jeff.id, name: "Parmesan Pita Crisps", content: "Content would go here.", preptime: "15", servings: "4",
+jeff_recipe_1 = jeff.recipes.create!(user_id: jeff.id, name: "Parmesan Pita Crisps", content: "Recipe instructions would go here.", preptime: "15", servings: "4",
   :ingredient_ids => [pita_pockets.id, olive_oil.id, sea_salt.id, nutritional_yeast.id])
 
-jeff_recipe_2 = jeff.recipes.create!(user_id: jeff.id, name: "Caprese Skewers", content: "Content would go here.", preptime: "20", servings: "6",
+jeff_recipe_2 = jeff.recipes.create!(user_id: jeff.id, name: "Caprese Skewers", content: "Recipe instructions would go here.", preptime: "20", servings: "6",
   :ingredient_ids => [tofu.id, olive_oil.id, sea_salt.id, black_pepper.id, cherry_tomatoes.id, basil.id, balsamic_vinegar.id])
 
-jeff_recipe_3 = jeff.recipes.create!(user_id: jeff.id, name: "Fried Zucchini", content: "Content would go here.", preptime: "20", servings: "6",
+jeff_recipe_3 = jeff.recipes.create!(user_id: jeff.id, name: "Fried Zucchini", content: "Recipe instructions would go here.", preptime: "20", servings: "6",
   :ingredient_ids => [flour.id, sea_salt.id, almond_milk.id, canola_oil.id, zucchini.id, bread_crumbs.id])
 
-chloe_recipe_1 = chloe.recipes.create!(user_id: chloe.id, name: "Lemony Chickpea Puree", content: "Content would go here.", preptime: "10", servings: "6",
+chloe_recipe_1 = chloe.recipes.create!(user_id: chloe.id, name: "Lemony Chickpea Puree", content: "Recipe instructions would go here.", preptime: "10", servings: "6",
   :ingredient_ids => [chickpeas.id, olive_oil.id, lemon_juice.id, capers.id, cayenne.id, sea_salt.id, black_pepper.id])
 
-chloe_recipe_2 = chloe.recipes.create!(user_id: chloe.id, name: "Pepper Crostini", content: "Content would go here.", preptime: "10", servings: "6",
+chloe_recipe_2 = chloe.recipes.create!(user_id: chloe.id, name: "Pepper Crostini", content: "Recipe instructions would go here.", preptime: "10", servings: "6",
   :ingredient_ids => [olive_oil.id, bell_pepper.id, sea_salt.id, black_pepper.id, baguette.id])
 
-chloe_recipe_3 = chloe.recipes.create!(user_id: chloe.id, name: "Roasted Cauliflower", content: "Content would go here.", preptime: "45", servings: "4",
+chloe_recipe_3 = chloe.recipes.create!(user_id: chloe.id, name: "Roasted Cauliflower", content: "Recipe instructions would go here.", preptime: "45", servings: "4",
   :ingredient_ids => [cauliflower.id, onion.id, sea_salt.id, garlic.id, thyme.id, olive_oil.id, sea_salt.id, black_pepper.id])

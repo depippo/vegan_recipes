@@ -3,7 +3,7 @@
 <div class= "list">
   <ul class= "list">
   <% Recipe.sort_by_average_score.each do |recipe| %>
-    <li class= "list"> <%= link_to recipe.name, recipe_path(recipe) %> Score: <%= recipe.average_score %> </li>
+    <li class= "list"> <%= link_to recipe.name, recipe_path(recipe) %> Score: <%= recipe.average_score.round(2) %> </li>
   <% end %>
   </ul>
 </div>

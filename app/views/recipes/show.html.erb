@@ -2,9 +2,8 @@
 <h4> Submitted by: <%= @recipe.user.email %> </h4>
 <h4>Makes: <%= @recipe.servings %> servings.</h4>
 <h4>Prep time: <%= @recipe.preptime %> minutes.</h4>
-<h4>Required ingredients:</h4>
 <ul class= "horizontal_list">
-<% @recipe.ingredients.each do |ingredient| %>
+<strong>Required ingredients:</strong> <% @recipe.ingredients.each do |ingredient| %>
   <li class= "horizontal_list"><%= link_to ingredient.name, ingredient_path(ingredient) %> | </li>
 <% end %>
 </ul>
