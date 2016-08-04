@@ -4,7 +4,8 @@ class Recipe < ActiveRecord::Base
   has_many :ingredients, through: :recipe_ingredients
   has_many :ratings
   has_many :photos
-  validates :name, :content, :preptime, :servings, :ingredients, presence: true
+  validates :name, :content, :ingredients, presence: true
+  validates :preptime, :servings,  numericality: {greater_than_or_equal_to: 1}
   accepts_nested_attributes_for :photos
   
   def ingredients_attributes=(ingredient_attributes)
