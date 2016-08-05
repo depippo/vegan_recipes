@@ -62,4 +62,4 @@ chloe_recipe_2 = chloe.recipes.create!(user_id: chloe.id, name: "Pepper Crostini
   :ingredient_ids => [olive_oil.id, bell_pepper.id, sea_salt.id, black_pepper.id, baguette.id])
 
 chloe_recipe_3 = chloe.recipes.create!(user_id: chloe.id, name: "Roasted Cauliflower", content: "Recipe instructions would go here.", preptime: "45", servings: "4",
-  :ingredient_ids => [cauliflower.id, onion.id, sea_salt.id, garlic.id, thyme.id, olive_oil.id, sea_salt.id, black_pepper.id])
+  :ingredient_ids => [cauliflower.id, onion.id, sea_salt.id, garlic.id, thyme.id, olive_oil.id, black_pepper.id])

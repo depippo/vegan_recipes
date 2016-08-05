@@ -27,7 +27,7 @@ class PhotosController < ApplicationController
     photo = Photo.new(photo_params)
     @recipe.photos << photo
     @recipe.save
-    redirect_to recipe_path(@recipe)
+    redirect_to recipe_photos_path(@recipe)
   end
 
   private
