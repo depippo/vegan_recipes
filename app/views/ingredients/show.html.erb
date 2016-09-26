@@ -9,3 +9,12 @@
   <% end %>
   </ul>
 <% end %>
+
+<% if !@ingredient.nutrients.empty? %>
+  <div class= "list">
+  <% @ingredient.nutrients.each do |nutrient| %>
+  <ul class= "list">
+    <li class= "list"> <%= nutrient.name %> </li>
+  <% end %>
+  </ul>
+<% end %>

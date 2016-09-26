@@ -14,13 +14,13 @@ class IngredientsController < ApplicationController
   end
 
   def create
-    @ingredient = Ingredient.where(name: ingredient_params[:name].downcase).first_or_create
+     @ingredient = Ingredient.where(name: ingredient_params[:name].downcase).first_or_create(ingredient_params)
     if @ingredient.save
       redirect_to ingredient_path(@ingredient)
     else
       render :new
     end
-  end
+end
 
   private
 
@@ -30,7 +30,7 @@ class IngredientsController < ApplicationController
   end
 
   def ingredient_params
-    params.require(:ingredient).permit(:name)
+    params.require(:ingredient).permit(:name, :nutrients_attributes => [:name], :nutrient_ids => [])
   end
 
 end
