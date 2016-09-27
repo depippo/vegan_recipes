@@ -8,6 +8,11 @@
 <% end %>
 </ul>
 
+<strong>Nutrients:</strong> <% @recipe.nutrients.each do |nutrient| %>
+  <li class= "horizontal_list"><%= link_to nutrient.name, nutrient_path(nutrient) %> | </li>
+<% end %>
+</ul>
+
 <p><%= @recipe.content %> </p>
 
 <% if @recipe.user.id != current_user.id %>

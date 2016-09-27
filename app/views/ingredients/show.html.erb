@@ -12,6 +12,7 @@
 
 <% if !@ingredient.nutrients.empty? %>
   <div class= "list">
+  <h4> Contains these nutrients: </h4>
   <% @ingredient.nutrients.each do |nutrient| %>
   <ul class= "list">
     <li class= "list"> <%= nutrient.name %> </li>

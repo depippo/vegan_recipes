@@ -14,15 +14,20 @@ class IngredientsController < ApplicationController
   end
 
   def create
+    ingredient_params[:name].downcase!
      @ingredient = Ingredient.where(name: ingredient_params[:name].downcase).first_or_create(ingredient_params)
     if @ingredient.save
       redirect_to ingredient_path(@ingredient)
     else
       render :new
     end
-end
+  end
 
   private
+
+  def check_params
+    self.name.downcase!
+  end
 
   def show_errors
     flash[:error] = "Oops, we cannot find that record. Please select an ingredient from the list."
