@@ -23,11 +23,17 @@ class IngredientsController < ApplicationController
     end
   end
 
-  private
-
-  def check_params
-    self.name.downcase!
+  def edit
+    @ingredient = Ingredient.find(params[:id])
   end
+
+  def update
+    @ingredient = Ingredient.find(params[:id])
+    @ingredient.update(ingredient_params)
+    redirect_to ingredient_path(@ingredient)
+  end
+
+  private
 
   def show_errors
     flash[:error] = "Oops, we cannot find that record. Please select an ingredient from the list."

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'recipes#index'
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   authenticate :user do
-    resources :ingredients, only: [:index, :show, :new, :create]
+    resources :ingredients, only: [:index, :show, :new, :create, :edit, :update]
     resources :users, only: [:index, :show]
     get 'recipes/highest_rated', to: 'recipes#highest_rated'
     resources :recipes do
