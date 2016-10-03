@@ -2,7 +2,7 @@ class Ingredient < ActiveRecord::Base
   has_many :recipe_ingredients
   has_many :recipes, through: :recipe_ingredients
   has_many :nutrient_ingredients
-  has_many :nutrients, through: :nutrient_ingredients
+  has_many :nutrients, -> { uniq }, through: :nutrient_ingredients
   belongs_to :recipe
   validates :name, presence: true
 
