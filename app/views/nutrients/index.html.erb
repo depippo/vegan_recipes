@@ -1,3 +1,8 @@
+<div class= "list">
+<h3>Nutrients</h3> <br>
+<ul class="list">
 <% @nutrients.each do |nutrient| %>
-  <%= nutrient.name %>
+  <li class= "list"> <%= link_to nutrient.name, nutrient_path(nutrient) %> </li>
 <% end %>
+</ul>
+</div>

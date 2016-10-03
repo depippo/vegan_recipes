@@ -15,7 +15,7 @@
   <h4> Contains these nutrients: </h4>
   <% @ingredient.nutrients.each do |nutrient| %>
   <ul class= "list">
-    <li class= "list"> <%= nutrient.name %> </li>
+    <li class= "list"> <%= link_to nutrient.name, nutrient_path(nutrient) %> </li>
   <% end %>
   </ul>
 <% end %>

@@ -1,0 +1,20 @@
+<h2><%= @nutrient.name %> </h2>
+
+<div class= "list">
+  <h4>Found in these ingredients:</h4>
+  <% @nutrient.ingredients.each do |ingredient| %>
+  <ul class= "list">
+    <li class= "list"> <%= link_to ingredient.name, ingredient_path(ingredient) %> </li>
+  <% end %>
+  </ul>
+  </div>
+
+<% if !@nutrient.recipes.empty? %>
+  <div class= "list">
+  <h4> Contains these nutrients: </h4>
+  <% @nutrient.recipes.each do |recipe| %>
+  <ul class= "list">
+    <li class= "list"> <%= link_to recipe.name, recipe_path(recipe) %> </li>
+  <% end %>
+  </ul>
+<% end %>
