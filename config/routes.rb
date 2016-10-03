@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  resources :nutrient_ingredients
-  resources :nutrients
+  resources :nutrients, only: [:index, :show]
   root 'recipes#index'
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   authenticate :user do

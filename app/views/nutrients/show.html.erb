@@ -7,14 +7,4 @@
     <li class= "list"> <%= link_to ingredient.name, ingredient_path(ingredient) %> </li>
   <% end %>
   </ul>
-  </div>
-
-<% if !@nutrient.recipes.empty? %>
-  <div class= "list">
-  <h4> Contains these nutrients: </h4>
-  <% @nutrient.recipes.each do |recipe| %>
-  <ul class= "list">
-    <li class= "list"> <%= link_to recipe.name, recipe_path(recipe) %> </li>
-  <% end %>
-  </ul>
-<% end %>
+</div>

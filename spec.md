@@ -7,9 +7,9 @@ Specs:
 - [x] Include at least one belongs_to relationship (x belongs_to y e.g. Post belongs_to User)
   Photo belongs to Recipe
 - [x] Include at least one has_many through relationship (x has_many y through z e.g. Recipe has_many Items through Ingredients)
-  Ingredient has_many Recipes through Recipe_Ingredients
+  Ingredient has_many Recipes through Recipe_Ingredients, Recipe has_many Nutrients through Ingredients
 - [x] The "through" part of the has_many through includes at least one user submittable attribute (attribute_name e.g. ingredients.quantity)
-  recipe.preptime, recipe.servings, etc.
+  ingredient.name
 - [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
   Recipe must include name, content, and ingredients. Preptime and servings must be greater than or equal to 1. Ingredients must have a name. Users must have email and password.
 

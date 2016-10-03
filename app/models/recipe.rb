@@ -2,7 +2,7 @@ class Recipe < ActiveRecord::Base
   belongs_to :user
   has_many :recipe_ingredients
   has_many :ingredients, through: :recipe_ingredients
-  has_many :nutrients, :through => :ingredients, :class_name => "Nutrient"
+  has_many :nutrients, -> { uniq }, :through => :ingredients, :class_name => "Nutrient"
   has_many :ratings
   has_many :photos
   validates :name, :content, :ingredients, presence: true
