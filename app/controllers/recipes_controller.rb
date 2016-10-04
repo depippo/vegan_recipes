@@ -41,10 +41,10 @@ class RecipesController < ApplicationController
     type = params[:type]
     if type == "favorite"
       current_user.favorites << @recipe
-      redirect_to :back, notice: "You favorited #{@recipe.name}"
+      redirect_to :back, notice: "You have favorited #{@recipe.name}"
     elsif type == "unfavorite"
       current_user.favorites.delete(@recipe)
-      redirect_to :back, notice: "You unfavorited #{@recipe.name}"
+      redirect_to :back, notice: "You have unfavorited #{@recipe.name}"
     else
       redirect_to :back
     end
