@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :recipes do
       resources :ratings, only: [:new, :create]
       resources :photos, only: [:index, :new, :create]
+      put :favorite, on: :member
     end
   end
   

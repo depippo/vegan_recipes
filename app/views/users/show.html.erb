@@ -1,7 +1,18 @@
-<h3><%= @user.email%>'s Recipes</h3> <br>
+<h3><%= @user.email%>'s Recipes:</h3> <br>
 <div class= "list">
   <ul class= "list">
   <% @user.recipes.each do |recipe| %>
+    <li class= "list"><%= link_to recipe.name, recipe_path(recipe) %></li>
+  <% end %>
+  </ul>
+</div>
+
+<br>
+
+<h4>Favorite Recipes:</h4>
+<div class= "list">
+  <ul class= "list">
+  <% @user.favorites.each do |recipe| %>
     <li class= "list"><%= link_to recipe.name, recipe_path(recipe) %></li>
   <% end %>
   </ul>

@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: [:show, :edit, :update]
+  before_action :set_recipe, only: [:show, :edit, :update, :favorite]
   rescue_from ActiveRecord::RecordNotFound, with: :show_errors
 
   def new
@@ -35,6 +35,19 @@ class RecipesController < ApplicationController
 
   def highest_rated
     @recipes = Recipe.all
+  end
+
+  def favorite
+    type = params[:type]
+    if type == "favorite"
+      current_user.favorites << @recipe
+      redirect_to :back, notice: "You favorited #{@recipe.name}"
+    elsif type == "unfavorite"
+      current_user.favorites.delete(@recipe)
+      redirect_to :back, notice: "You unfavorited #{@recipe.name}"
+    else
+      redirect_to :back
+    end
   end
 
   private
