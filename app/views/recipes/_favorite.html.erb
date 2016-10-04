@@ -1,0 +1,4 @@
+<% if current_user %>
+  <p>Like this recipe? Click
+  <%= link_to "here", favorite_recipe_path(@recipe, type: "favorite"), method: :put %> to add it to your favorites.</p>
+<% end %>
