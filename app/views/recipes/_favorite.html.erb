@@ -2,3 +2,8 @@
   <p>Like this recipe? Click
   <%= link_to "here", favorite_recipe_path(@recipe, type: "favorite"), method: :put %> to add it to your favorites.</p>
 <% end %>
+
+<h4> This recipe has been favorited by: </h4>
+<% @recipe.favorited_by.each do |user| %>
+ <%= link_to user.email, user_path(user) %>
+<% end %>
