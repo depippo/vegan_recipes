@@ -1,10 +1,33 @@
 <div class= "list">
 <h3>Ingredients</h3> <br>
-<ul class="list">
-<% @ingredients.each do |ingredient| %>
-  <li class= "list"> <%= link_to ingredient.name, ingredient_path(ingredient) %> </li>
-<% end %>
-</ul>
+
+  <ul class="list">
+  <% @ingredients.each do |ingredient| %>
+    <div>
+      <li class= "list"> <%= link_to ingredient.name, ingredient_path(ingredient) %> </li>
+      <button class="js-more" data-id="<%= ingredient.id %>">More Info</button>
+      </div>
+  <% end %>
+  </ul>
 </div>
 
 <h3> <%= link_to "Add ingredient", new_ingredient_path %> </h3>
+
+<script type="text/javascript" charset="utf-8">
+$(function() {
+  $(".js-more").one("click", function(event) {
+    var ul = event.target.parentNode;
+    var button = event.target;
+    console.log(ul);
+    var id = $(this).data("id");
+    $.get("/ingredients/" + id + ".json").success(function(json) {
+      if (json.nutrients.length > 0) {
+        $(button).hide();
+        $(ul).append("Contains nutrients:");
+        json.nutrients.forEach(function(nutrient){
+          $(ul).append('<li>' + nutrient.name + '</li>');
+      })}
+    });
+  });
+});
+</script>
