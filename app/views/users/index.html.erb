@@ -3,6 +3,26 @@
   <ul class= "list">
   <% @users.each do |user| %>
     <li class= "list"><%= link_to user.email, user_path(user) %></li>
+    <button class="js-more" data-id="<%= user.id %>">User's recipes</button>
   <% end %>
   </ul>
 </div>
+
+<script type="text/javascript" charset="utf-8">
+$(function() {
+  $(".js-more").one("click", function(event) {
+    var ul = event.target.parentNode;
+    var button = event.target;
+    console.log(ul);
+    var id = $(this).data("id");
+    $.get("/ingredients/" + id + ".json").success(function(json) {
+      if (json.nutrients.length > 0) {
+        $(button).hide();
+        $(ul).append("Contains nutrients:");
+        json.nutrients.forEach(function(nutrient){
+          $(ul).append('<li>' + nutrient.name + '</li>');
+      })}
+    });
+  });
+});
+</script>
