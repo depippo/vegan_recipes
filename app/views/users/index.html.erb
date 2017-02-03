@@ -2,8 +2,10 @@
   <h3>Users</h3> <br>
   <ul class= "list">
   <% @users.each do |user| %>
+    <div>
     <li class= "list"><%= link_to user.email, user_path(user) %></li>
     <button class="js-more" data-id="<%= user.id %>">User's recipes</button>
+    </div>
   <% end %>
   </ul>
 </div>
@@ -15,12 +17,12 @@ $(function() {
     var button = event.target;
     console.log(ul);
     var id = $(this).data("id");
-    $.get("/ingredients/" + id + ".json").success(function(json) {
-      if (json.nutrients.length > 0) {
+    $.get("/users/" + id + ".json").success(function(json) {
+      if (json.recipes.length > 0) {
         $(button).hide();
-        $(ul).append("Contains nutrients:");
-        json.nutrients.forEach(function(nutrient){
-          $(ul).append('<li>' + nutrient.name + '</li>');
+        json.recipes.forEach(function(recipe){
+          console.log(recipe);
+          $(ul).append('<li>' + '<a href="/recipes/' + recipe.id + '">' + recipe.name + '</a>' + '</li>');          
       })}
     });
   });
