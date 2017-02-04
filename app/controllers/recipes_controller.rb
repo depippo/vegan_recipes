@@ -17,6 +17,11 @@ class RecipesController < ApplicationController
 
   def show
     @rating = Rating.new
+    @recipe = Recipe.find(params[:id])
+      respond_to do |format|
+      format.html { render :show }
+      format.json { render json: @recipe }
+    end
   end
 
   def index
