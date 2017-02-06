@@ -1,6 +1,7 @@
-<h3><%= @user.email%>'s Recipes:</h3> <br>
+<h3><span class="userName"><%= @user.email%></span>'s Recipes:</h3> <br>
+
 <div class= "list">
-  <ul class= "list">
+  <ul class= "list userRecipes">
   <% @user.recipes.each do |recipe| %>
     <li class= "list"><%= link_to recipe.name, recipe_path(recipe) %></li>
   <% end %>
@@ -18,4 +19,27 @@
   </ul>
 </div>
 <br>
-<%= link_to "Manage your account", edit_user_registration_path %>
+<%= link_to "Manage your account", edit_user_registration_path %> <br>
+
+<a href="#" class="js-next" data-id="<%=@user.id%>">Next User</a>
+
+<script type="text/javascript" charset="utf-8">
+$(function () {
+  $(".js-next").on("click", function(event) {
+    var nextId = parseInt($(".js-next").attr("data-id")) + 1;
+    $.get("/users/" + nextId + "/data").success(function(data) {
+      $(".userName").text(data["email"]);
+      if (data["recipes"]) {
+        $(".userRecipes").empty();
+        data["recipes"].forEach(function(element){
+          console.log(element);
+          $(".userRecipes").append('<li class="list">' + element + '</li>');
+        })
+        // re-set the id to current on the link
+        $(".js-next").attr("data-id", data["id"]);
+      }
+    });
+    event.preventDefault();
+  });
+});
+</script>
