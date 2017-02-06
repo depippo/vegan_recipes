@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :ingredients, only: [:index, :show, :new, :create, :edit, :update]
     resources :users, only: [:index, :show]
     get 'recipes/highest_rated', to: 'recipes#highest_rated'
+    get '/users/:id/data', to: 'users#data'
     resources :recipes do
       resources :ratings, only: [:new, :create]
       resources :photos, only: [:index, :new, :create]
