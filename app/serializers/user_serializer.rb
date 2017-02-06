@@ -1,4 +1,8 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id
-  has_many :recipes
+  def self.serialize(user)
+    serialized_user = '{'
+    serialized_user += '"id": ' + user.id.to_s + ', '
+    serialized_user += '"email": "' + user.email + '"'
+    serialized_user += '}'
+  end
 end
