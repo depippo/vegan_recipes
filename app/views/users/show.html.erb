@@ -33,7 +33,7 @@ $(function () {
         $(".userRecipes").empty();
         data["recipes"].forEach(function(element){
           console.log(element);
-          $(".userRecipes").append('<li class="list">' + element + '</li>');
+          $(".userRecipes").append('<li class="list">' + element.name + element.id + '</li>');
         })
         // re-set the id to current on the link
         $(".js-next").attr("data-id", data["id"]);
