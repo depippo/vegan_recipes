@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :comments
   root 'recipes#index'
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   authenticate :user do
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
     get 'recipes/highest_rated', to: 'recipes#highest_rated'
     get '/users/:id/data', to: 'users#data'
     resources :recipes do
+      resources :comments
       resources :ratings, only: [:new, :create]
       resources :photos, only: [:index, :new, :create]
       put :favorite, on: :member

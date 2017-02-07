@@ -6,6 +6,7 @@ class Recipe < ActiveRecord::Base
   has_many :ingredients, through: :recipe_ingredients
   has_many :nutrients, -> { uniq }, :through => :ingredients, :class_name => "Nutrient"
   has_many :ratings
+  has_many :comments
   has_many :photos
   validates :name, :content, :ingredients, presence: true
   validates :preptime, :servings,  numericality: {greater_than_or_equal_to: 1}
