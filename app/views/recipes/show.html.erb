@@ -36,3 +36,55 @@
 <br>
 
 <%= render 'favorite' %>
+
+<h3>Submit a comment:</h3>
+<%= form_for @comment do |f|%>
+  <p>
+    <%= f.label :name %>:
+    <%= f.text_field :name %>
+    
+    <br>
+    <%= f.label :content %>:
+    <%= f.text_field :content %>
+  </p>
+  <%= f.submit %>
+<% end %>
+
+
+
+<script type="text/javascript" charset="utf-8">
+function Comment(attributes){
+  this.description = attributes.name;
+  this.id = attributes.id;
+}
+
+Comment.prototype.renderLi = function(){
+
+}
+
+
+$(function(){
+  $("form#new_comment").on("submit", function(e){
+    e.preventDefault()
+    var $form = $(this);
+    var action = $form.attr("action")
+    var params = $form.serialize()
+
+    $.ajax({
+      url: action,
+      data: params,
+      dataType: "json",
+      method: "POST"
+    })
+    .success(function(json){
+      var comment = new Comment(json);
+      var commentLi = item.renderLi()
+      $("ul.todo-list").append(html)
+    })
+    .error(function(response){
+      console.log("Broken", response)
+    })
+  })
+})
+</script>
+

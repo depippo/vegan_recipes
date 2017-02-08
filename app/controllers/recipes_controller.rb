@@ -17,6 +17,7 @@ class RecipesController < ApplicationController
 
   def show
     @rating = Rating.new
+    @comment = Comment.new
     @recipe = Recipe.find(params[:id])
       respond_to do |format|
       format.html { render :show }
