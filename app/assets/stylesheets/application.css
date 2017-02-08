@@ -124,7 +124,7 @@ ul.horizontal_list {
 
 li.horizontal_list {
   display:inline;
-  font: 200 14px/1.5 Helvetica, Verdana, sans-serif;
+  font: 200 16px/1.5 Helvetica, Verdana, sans-serif;
   border-bottom: 1px solid #ccc;
 }
 
@@ -160,6 +160,11 @@ li.horizontal_list a:hover {
 
 .flash_notice {
   color: green;
+}
+
+.comment {
+  font: 400 14px/1.25 Helvetica, Verdana, sans-serif;;
+  border-bottom: 1px solid #ccc;
 }
 
 /*  Form styling */

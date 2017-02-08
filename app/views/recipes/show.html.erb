@@ -37,18 +37,35 @@
 
 <%= render 'favorite' %>
 
-<h3>Submit a comment:</h3>
-<%= form_for @comment do |f|%>
+<h5>Submit a comment:</h5>
+<%= form_for [@recipe, @comment] do |f|%>
   <p>
     <%= f.label :name %>:
     <%= f.text_field :name %>
     
     <br>
     <%= f.label :content %>:
-    <%= f.text_field :content %>
+    <%= f.text_area :content %>
   </p>
   <%= f.submit %>
 <% end %>
+
+<h5>Comments:</h5>
+<% @recipe.comments.each do |comment| %>
+  <p class="comment">
+    <%= comment.name %> says: <br>
+    <%= comment.content %> <br>
+  </p>
+<% end %>
+
+<script id="comment-template" type="text/x-handlebars-template">
+  <div class="entry">
+    <h1>{{name}}</h1>
+    <div class="body">
+      {{content}}
+    </div>
+  </div>
+</script>
 
 
 
@@ -64,7 +81,7 @@ Comment.prototype.renderLi = function(){
 
 
 $(function(){
-  $("form#new_comment").on("submit", function(e){
+  $("form#dontfire").on("submit", function(e){
     e.preventDefault()
     var $form = $(this);
     var action = $form.attr("action")
