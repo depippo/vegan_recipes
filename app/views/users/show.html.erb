@@ -12,7 +12,7 @@
 
 <h4>Favorite Recipes:</h4>
 <div class= "list">
-  <ul class= "list">
+  <ul class= "list userFavorites">
   <% @user.favorites.each do |recipe| %>
     <li class= "list"><%= link_to recipe.name, recipe_path(recipe) %></li>
   <% end %>
@@ -33,9 +33,14 @@ $(function () {
       if (data["recipes"]) {
         $(".userRecipes").empty();
         data["recipes"].forEach(function(element){
-          console.log(element);
           $(".userRecipes").append('<li class="list"><a href="/recipes/' + element.id + '">' + element.name + '</a></li>');
         })
+      if (data["favorites"]) {
+        $(".userFavorites").empty();
+        data["favorites"].forEach(function(element){
+          $(".userFavorites").append('<li class="list"><a href="/recipes/' + element.id + '">' + element.name + '</a></li>');
+        })
+      }
         // re-set the id to current on the link
         $(".js-next").attr("data-id", data["id"]);
       }
@@ -54,6 +59,12 @@ $(function () {
           console.log(element);
           $(".userRecipes").append('<li class="list"><a href="/recipes/' + element.id + '">' + element.name + '</a></li>');
         })
+      if (data["favorites"]) {
+        $(".userFavorites").empty();
+        data["favorites"].forEach(function(element){
+          $(".userFavorites").append('<li class="list"><a href="/recipes/' + element.id + '">' + element.name + '</a></li>');
+        })
+      }
         // re-set the id to current on the link
         $(".js-next").attr("data-id", data["id"]);
       }
