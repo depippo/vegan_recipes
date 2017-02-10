@@ -21,12 +21,31 @@
 <br>
 <%= link_to "Manage your account", edit_user_registration_path %> <br>
 
+<a href="#" class="js-previous" data-id="<%=@user.id%>">Previous User</a>
 <a href="#" class="js-next" data-id="<%=@user.id%>">Next User</a>
 
 <script type="text/javascript" charset="utf-8">
 $(function () {
   $(".js-next").on("click", function(event) {
     var nextId = parseInt($(".js-next").attr("data-id")) + 1;
+    $.get("/users/" + nextId + "/data").success(function(data) {
+      $(".userName").text(data["email"]);
+      if (data["recipes"]) {
+        $(".userRecipes").empty();
+        data["recipes"].forEach(function(element){
+          console.log(element);
+          $(".userRecipes").append('<li class="list"><a href="/recipes/' + element.id + '">' + element.name + '</a></li>');
+        })
+        // re-set the id to current on the link
+        $(".js-next").attr("data-id", data["id"]);
+      }
+    });
+    event.preventDefault();
+  });
+});
+$(function () {
+  $(".js-previous").on("click", function(event) {
+    var nextId = parseInt($(".js-next").attr("data-id")) - 1;
     $.get("/users/" + nextId + "/data").success(function(data) {
       $(".userName").text(data["email"]);
       if (data["recipes"]) {
