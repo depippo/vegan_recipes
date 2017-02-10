@@ -91,6 +91,8 @@ $(function(){
     .success(function(json){
       var comment = new Comment(json);
       var commentLi = comment.renderLi()
+      $("#comment_name").val('')
+      $("#comment_content").val('')
     })
     .error(function(response){
       console.log("Broken", response)
