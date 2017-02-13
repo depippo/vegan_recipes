@@ -1,4 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
+  has_many :recipes
   def self.serialize(user)
     user_recipes = []
     user.recipes.each do |recipe|
