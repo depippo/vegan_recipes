@@ -15,3 +15,4 @@
 //= require handlebars.amd
 //= require turbolinks
 //= require_tree .
+//= require recipes.js
