@@ -4,7 +4,7 @@
   <h5 class="recipes">Found in these ingredients:</h5>
   <ul class="list_recipes">
   <% @nutrient.ingredients.each do |ingredient| %>
-    <li class="list_recipes"> <%= link_to ingredient.name, ingredient_path(ingredient) %> </li>
+    <li class="list_ingredients"> <%= link_to ingredient.name, ingredient_path(ingredient) %> </li>
   <% end %>
   </ul>
 </div>

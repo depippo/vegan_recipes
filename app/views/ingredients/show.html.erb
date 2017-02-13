@@ -5,7 +5,7 @@
   <h5 class="recipes">Used in these recipes:</h5>
   <ul class="list_recipes">
   <% @ingredient.recipes.each do |recipe| %>
-    <li class="list_recipes"> <%= link_to recipe.name, recipe_path(recipe) %> </li>
+    <li class="list_ingredients"> <%= link_to recipe.name, recipe_path(recipe) %> </li>
   <% end %>
   </ul>
 <% end %>
@@ -14,7 +14,7 @@
   <h5 class="recipes"> Contains these nutrients: </h5>
   <ul class="list_recipes">
   <% @ingredient.nutrients.each do |nutrient| %>
-    <li class="list_recipes"> <%= link_to nutrient.name, nutrient_path(nutrient) %> </li>
+    <li class="list_ingredients"> <%= link_to nutrient.name, nutrient_path(nutrient) %> </li>
   <% end %>
   </ul>
 <% end %>
