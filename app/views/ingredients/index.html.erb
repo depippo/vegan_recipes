@@ -4,9 +4,10 @@
   <ul class="list_recipes">
   <% @ingredients.each do |ingredient| %>
     <div>
-      <li class= "list_ingredients"> <%= link_to ingredient.name, ingredient_path(ingredient) %> </li>
-      <button class="js-more" data-id="<%= ingredient.id %>">More Info</button>
-      </div>
+      <li class= "list_ingredients"> <%= link_to ingredient.name, ingredient_path(ingredient) %>
+        <button class="js-more" data-id="<%= ingredient.id %>">Show Nutrients</button>
+      </li>
+    </div>
   <% end %>
   </ul>
 </div>
@@ -23,9 +24,9 @@ $(function() {
     $.get("/ingredients/" + id + ".json").success(function(json) {
       if (json.nutrients.length > 0) {
         $(button).hide();
-        $(ul).append("Contains nutrients:");
+        // $(ul).append("Contains nutrients:");
         json.nutrients.forEach(function(nutrient){
-          $(ul).append('<li>' + nutrient.name + '</li>');
+          $(ul).append('<li class="json_ingredients">' + nutrient.name + '</li>');
       })}
     });
   });
