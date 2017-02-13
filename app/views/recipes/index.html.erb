@@ -1,12 +1,10 @@
-<div class= "list">
-  <h3>Recipes</h3> <br>
-  <ul class= "list">
+<div class= "list_recipes container">
+  <h3 class="recipes">Recipes</h3> <br>
+  <ul class= "list_recipes">
   <% @recipes.each do |recipe| %>
-    <li class= "list"> <%= link_to recipe.name, recipe_path(recipe) %> </li>
+    <li class= "list_recipes"> <%= link_to recipe.name, recipe_path(recipe) %> </li>
   <% end %>
   </ul>
+  <br>
+  <h4> <%= link_to "Add a new recipe", new_recipe_path %> </h4> <br>
 </div>
-
-<br>
-
-<h3> <%= link_to "Add a new recipe", new_recipe_path %> </h3> <br>

@@ -1,10 +1,10 @@
-<div class= "list">
-<h3>Ingredients</h3> <br>
+<div class= "list_recipes container">
+<h3 class="recipes">Ingredients</h3> <br>
 
-  <ul class="list">
+  <ul class="list_recipes">
   <% @ingredients.each do |ingredient| %>
     <div>
-      <li class= "list"> <%= link_to ingredient.name, ingredient_path(ingredient) %> </li>
+      <li class= "list_ingredients"> <%= link_to ingredient.name, ingredient_path(ingredient) %> </li>
       <button class="js-more" data-id="<%= ingredient.id %>">More Info</button>
       </div>
   <% end %>

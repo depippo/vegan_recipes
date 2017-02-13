@@ -1,8 +1,8 @@
-<div class= "list">
-<h3>Nutrients</h3> <br>
-<ul class="list">
+<div class= "list_recipes container">
+<h3 class="recipes">Nutrients</h3> <br>
+<ul class="list_recipes">
 <% @nutrients.each do |nutrient| %>
-  <li class= "list"> <%= link_to nutrient.name, nutrient_path(nutrient) %> </li>
+  <li class= "list_ingredients"> <%= link_to nutrient.name, nutrient_path(nutrient) %> </li>
 <% end %>
 </ul>
 </div>

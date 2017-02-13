@@ -13,9 +13,9 @@
 <script type="text/javascript" charset="utf-8">
 $(function() {
   $(".js-more").one("click", function(event) {
+    console.log(event);
     var ul = event.target.parentNode;
     var button = event.target;
-    console.log(ul);
     var id = $(this).data("id");
     $.get("/users/" + id + ".json").success(function(json) {
       if (json.recipes.length > 0) {

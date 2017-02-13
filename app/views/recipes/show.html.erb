@@ -1,3 +1,4 @@
+<div class="list_recipe container">
 <h3> <%= @recipe.name %> </h3>
 <h4> Submitted by: <%= link_to @recipe.user.email, user_path(@recipe.user) %> </h4>
 <h4>Makes: <%= @recipe.servings %> servings.</h4>
@@ -60,6 +61,7 @@
     <% end %>
   </div>
 
+</div>
 
 <script type="text/javascript" charset="utf-8">
 // var source = $("#comment-template").html();
