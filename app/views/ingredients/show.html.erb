@@ -1,23 +1,23 @@
-<h2><%= @ingredient.name %> </h2>
+<div class="list_recipes container">
+<h3 class="recipes"><%= @ingredient.name %> </h3>
 
 <% if !@ingredient.recipes.empty? %>
-  <div class= "list">
-  <h4>Used in these recipes:</h4>
+  <h5 class="recipes">Used in these recipes:</h5>
+  <ul class="list_recipes">
   <% @ingredient.recipes.each do |recipe| %>
-  <ul class= "list">
-    <li class= "list"> <%= link_to recipe.name, recipe_path(recipe) %> </li>
+    <li class="list_recipes"> <%= link_to recipe.name, recipe_path(recipe) %> </li>
   <% end %>
   </ul>
 <% end %>
 
 <% if !@ingredient.nutrients.empty? %>
-  <div class= "list">
-  <h4> Contains these nutrients: </h4>
+  <h5 class="recipes"> Contains these nutrients: </h5>
+  <ul class="list_recipes">
   <% @ingredient.nutrients.each do |nutrient| %>
-  <ul class= "list">
-    <li class= "list"> <%= link_to nutrient.name, nutrient_path(nutrient) %> </li>
+    <li class="list_recipes"> <%= link_to nutrient.name, nutrient_path(nutrient) %> </li>
   <% end %>
   </ul>
 <% end %>
 
 <%= link_to "Edit this ingredient", edit_ingredient_path(@ingredient) %>
+</div>

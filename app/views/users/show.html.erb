@@ -1,4 +1,5 @@
-<h3><span class="userName"><%= @user.email%></span>'s Recipes:</h3> <br>
+<div class="list_recipe container">
+<h3 class="recipes"><span class="userName"><%= @user.email%></span>'s Recipes:</h3> <br>
 
 <div class= "list">
   <ul class= "list userRecipes">
@@ -10,7 +11,7 @@
 
 <br>
 
-<h4>Favorite Recipes:</h4>
+<h3 class="recipes">Favorite Recipes:</h4>
 <div class= "list">
   <ul class= "list userFavorites">
   <% @user.favorites.each do |recipe| %>
@@ -23,6 +24,7 @@
 
 <a href="#" class="js-previous" data-id="<%=@user.id%>">Previous User</a>
 <a href="#" class="js-next" data-id="<%=@user.id%>">Next User</a>
+</div>
 
 <script type="text/javascript" charset="utf-8">
 $(function () {

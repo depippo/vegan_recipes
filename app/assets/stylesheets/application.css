@@ -55,7 +55,7 @@ h1.title {
 }
 
 div.list {
-  width: 200px;
+  width: 500px;
 }
 
 div.list_recipes {
@@ -87,6 +87,13 @@ h3.recipes {
   margin: 0;
 }
 
+h5.recipes {
+  padding-top: 20px;
+  padding-left: 30px;
+  font: 400 22px/1.5 Georgia, serif;
+  margin: 0;
+}
+
 
 * {
     font-family: Georgia, serif;
@@ -95,7 +102,9 @@ h3.recipes {
 ul.list {
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-bottom: 30px;
 }
 
 ul.list_recipes {
@@ -107,11 +116,6 @@ ul.list_recipes {
 }
 
 li.list {
-  font: 200 20px/1.5 Georgia, serif;
-  border-bottom: 1px solid #ccc;
-}
-
-li.list_recipes{
   font: 400 22px/2.5 Georgia, serif;
 /*  padding-bottom: 5px;*/
   border-bottom: 1px solid #ccc;
@@ -129,14 +133,21 @@ li.list:last-child {
 li.list a {
   text-decoration: none;
   color: #000;
+  padding-left: 5px;
 
   -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
   -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
   -o-transition: font-size 0.3s ease, background-color 0.3s ease;
   -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
   transition: font-size 0.3s ease, background-color 0.3s ease;
-  display: block;
-  width: 6000px;
+  display: inline-block;
+  width: 436px;
+}
+
+li.list_recipes{
+  font: 400 22px/2.5 Georgia, serif;
+/*  padding-bottom: 5px;*/
+  border-bottom: 1px solid #ccc;
 }
 
 li.list_recipes a:hover {
@@ -184,7 +195,7 @@ li.list_ingredients a {
 
 li.list a:hover {
   font-size: 21px;
-  background: #f6f6f6;
+  background: rgba(255, 255, 255, 0.6);
 }
 
 div.nav {

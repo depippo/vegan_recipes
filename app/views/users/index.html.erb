@@ -1,9 +1,9 @@
-<div class= "list">
-  <h3>Users</h3> <br>
-  <ul class= "list">
+<div class= "list_recipes container">
+  <h3 class="recipes">Users</h3> <br>
+  <ul class= "list_recipes">
   <% @users.each do |user| %>
     <div>
-    <li class= "list"><%= link_to user.email, user_path(user) %></li>
+    <li class= "list_recipes"><%= link_to user.email, user_path(user) %></li>
     <button class="js-more" data-id="<%= user.id %>">User's recipes</button>
     </div>
   <% end %>
