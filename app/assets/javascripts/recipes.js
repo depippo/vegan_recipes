@@ -1,6 +1,7 @@
-$(document).ready(function(){
+$(document).on('turbolinks:load', function() {
   postComment();
 });
+
 
   // var source = $("#comment-template").html();
   // var template = Handlebars.compile(source);
@@ -18,7 +19,7 @@ $(document).ready(function(){
   function postComment(){
     console.log("firing the postComment function.");
     $("form#new_comment").on("submit", function(e){
-      e.preventDefault()
+      e.preventDefault();
       var $form = $(this);
       var action = $form.attr("action")
       var params = $form.serialize()
@@ -30,6 +31,7 @@ $(document).ready(function(){
         method: "POST"
       })
       .success(function(json){
+        e.preventDefault();
         var comment = new Comment(json);
         var commentLi = comment.renderLi()
         $("#comment_name").val('')
