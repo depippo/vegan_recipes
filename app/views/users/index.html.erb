@@ -9,22 +9,3 @@
   <% end %>
   </ul>
 </div>
-
-<script type="text/javascript" charset="utf-8">
-$(function() {
-  $(".js-more").one("click", function(event) {
-    console.log(event);
-    var ul = event.target.parentNode;
-    var button = event.target;
-    var id = $(this).data("id");
-    $.get("/users/" + id + ".json").success(function(json) {
-      if (json.recipes.length > 0) {
-        $(button).hide();
-        json.recipes.forEach(function(recipe){
-          console.log(recipe.name);
-          $(ul).append('<li>' + '<a href="/recipes/' + recipe.id + '">' + recipe.name + '</a>' + '</li>');          
-      })}
-    });
-  });
-});
-</script>
