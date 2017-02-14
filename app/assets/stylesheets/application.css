@@ -121,11 +121,6 @@ li.list {
   border-bottom: 1px solid #ccc;
 }
 
-
-.clickable {
-  background-color: red;
-}
-
 li.list:last-child {
   border: none;
 }
@@ -200,6 +195,7 @@ li.list a:hover {
 
 div.nav {
   background-color: rgba(100, 0, 255, .2);
+  box-shadow: 1px 1px 50px 0px #999999;
   margin-left: -30px;
   margin-top: -30px;
 }

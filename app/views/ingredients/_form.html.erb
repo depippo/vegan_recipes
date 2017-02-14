@@ -1,19 +1,21 @@
-<%= form_for @ingredient do |f|%>
-<p>
-  <%= f.label :name %>:
-  <%= f.text_field :name %>
-
-  <%= f.collection_check_boxes :nutrient_ids, Nutrient.all.sort_by(&:name), :id, :name %> <br>
-    <% 5.times do %>
-      <%= f.fields_for :nutrients, @ingredient.nutrients.build do |nutrients_fields| %>
-      <span class="fh-checkbox">
-        <%= nutrients_fields.label "Add nutrient" %>:
-        <%= nutrients_fields.text_field :name %>
-      </span>
+<div class="list_recipe container">
+  <%= form_for @ingredient do |f|%>
+  <p>
+    <%= f.label :name %>:
+    <%= f.text_field :name %>
+    <br>
+    <%= f.collection_check_boxes :nutrient_ids, Nutrient.all.sort_by(&:name), :id, :name %> <br>
+      <% 5.times do %>
+        <%= f.fields_for :nutrients, @ingredient.nutrients.build do |nutrients_fields| %>
+        <span class="fh-checkbox">
+          <%= nutrients_fields.label "Add nutrient" %>:
+          <%= nutrients_fields.text_field :name %>
+        </span>
+        <% end %>
       <% end %>
-    <% end %>
 
-</p>
+  </p>
 
-  <%= f.submit %>
-<% end %>
+    <%= f.submit %>
+  <% end %>
+</div>
