@@ -17,7 +17,7 @@
 
 body {
   background-color: white;
-  background-image: url(https://pixabay.com/get/ea37b10e2bf21c22d2524518a3484395e472e5d504b0154993f9c279aeecb2/fruits-320136_1280.jpg);
+  background-image: url('./fruits.jpg');
   background-attachment: fixed;
   background-repeat: no-repeat;
   font-family: Georgia, serif;
