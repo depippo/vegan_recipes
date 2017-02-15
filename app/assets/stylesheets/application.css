@@ -37,7 +37,15 @@ body {
 }
 
 
-
+.photo {
+  display: inline-block;
+  background-color: white;
+  padding: 5px;
+  margin-bottom: 10px;
+  height: auto;
+  width: auto;
+  box-shadow: 20px 20px 70px 0px #333333;
+}
 
 
 .checkboxes{

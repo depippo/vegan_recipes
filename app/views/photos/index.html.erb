@@ -1,10 +1,14 @@
-<h3> <%= @recipe.name %> </h3>
-<% if @photos.count > 0 %>
-  <% @photos.each do |photo|%>
-  <%= image_tag photo.image %>
+<div class="list_recipe container">
+  <h3> <%= @recipe.name %> </h3>
+  <% if @photos.count > 0 %>
+    <% @photos.each do |photo|%>
+      <div class="photo">
+        <%= image_tag photo.image %>
+      </div>
+    <% end %>
+  <% else %>
+    <p>There are no photos of this recipe yet.<p>
   <% end %>
-<% else %>
-  <p>There are no photos of this recipe yet.<p>
-<% end %>
 
-<h3> <%= link_to "Upload a photo", new_recipe_photo_path %> </h3>
+  <h5 class="recipes"> <%= link_to "Upload a photo", new_recipe_photo_path %> </h5>
+</div>

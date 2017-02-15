@@ -1,7 +1,9 @@
-<%= form_for [@recipe, @photo] do |f|%>
+<div class="container">
+  <%= form_for [@recipe, @photo] do |f|%>
 
-  <%= f.label :image %>:
-  <%= f.file_field :image %>
-  
-  <%= f.submit %>
-<% end %>
+    <%= f.label :image %>:
+    <%= f.file_field :image %>
+    
+    <%= f.submit %>
+  <% end %>
+</div>
