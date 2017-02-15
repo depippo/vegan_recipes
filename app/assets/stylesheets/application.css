@@ -36,6 +36,19 @@ body {
   background-color: rgba(255, 255, 255, 0.6);
 }
 
+.js-previous {
+  position: absolute;
+  top: 690px;
+  left: 350px;
+
+}
+
+.js-next {
+  position: absolute;
+  top: 690px;
+  left: 750px;
+
+}
 
 .photo {
   display: inline-block;
@@ -87,6 +100,16 @@ div.list_recipe {
   padding-top: 20px;
   margin-top: 30px;
   width: 700px;
+/*  border-style: ;
+  border-width: .5px;*/
+  box-shadow: 20px 20px 70px 0px #333333;
+}
+
+div.list_user {
+  padding-top: 20px;
+  margin-top: 30px;
+  width: 500px;
+  height: 600px;
 /*  border-style: ;
   border-width: .5px;*/
   box-shadow: 20px 20px 70px 0px #333333;
