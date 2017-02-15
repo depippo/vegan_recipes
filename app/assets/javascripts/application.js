@@ -12,7 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require handlebars.amd
 //= require turbolinks
 //= require_tree .
-//= require recipes.js
