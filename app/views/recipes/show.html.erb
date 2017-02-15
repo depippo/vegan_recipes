@@ -38,30 +38,6 @@
 
 <%= render 'favorite' %>
 
-<h5>Comments:</h5>
-  <div class="comments_container">
-    <% @recipe.comments.each do |comment| %>
-      <p class="comment">
-        <%= comment.name %> says: <br>
-        <%= comment.content %> <br>
-      </p>
-    <% end %>
-  </div>
-
-<h5>Submit a comment:</h5>
-<%= form_for [@recipe, @comment] do |f|%>
-  <p>
-    <%= f.label :name %>:
-    <%= f.text_field :name %>
-    
-    <br>
-    <%= f.label :content %>:
-    <%= f.text_area :content,  cols: "40", rows: "5" %>
-  </p>
-  <%= f.submit %>
-<% end %>
+<%= render 'comments' %>
 
 </div>
-
-
-
