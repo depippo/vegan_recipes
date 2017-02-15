@@ -1,32 +1,37 @@
-<%= form_for @recipe do |f|%>
-  <p>
-    <%= f.label :name %>:
-    <%= f.text_field :name %>
-    
-    <br>
-    <%= f.label :preptime %> (minutes):
-    <%= f.number_field :preptime %>
+<div class="container">
+  <%= form_for @recipe do |f|%>
+    <p>
+      <%= f.label :name %>:
+      <%= f.text_field :name %>
+      
+      <br>
+      <%= f.label :preptime %> (minutes):
+      <%= f.number_field :preptime %>
 
-    <%= f.label :servings %>:
-    <%= f.number_field :servings %>
-    
-    <br>
+      <%= f.label :servings %>:
+      <%= f.number_field :servings %>
+      
+      <br>
 
-    <%= f.label "Instructions" %>:
-    <%= f.text_area :content,  cols: "80", rows: "20" %>
+      <%= f.label "Instructions" %>:
+      <%= f.text_area :content,  cols: "80", rows: "20" %>
 
-    <br>
-    <%= f.label "Ingredients" %>:
-    <br>
-    <%= f.collection_check_boxes :ingredient_ids, Ingredient.all.sort_by(&:name), :id, :name %> <br>
-    <% 5.times do %>
-      <%= f.fields_for :ingredients, @recipe.ingredients.build do |ingredients_fields| %>
-      <span class="fh-checkbox">
-        <%= ingredients_fields.label "Add ingredient" %>:
-        <%= ingredients_fields.text_field :name %>
-      </span>
+      <br>
+      <%= f.label "Ingredients" %>:
+      <br>
+      <%= f.collection_check_boxes :ingredient_ids, Ingredient.all.sort_by(&:name), :id, :name do |b| %>
+       <span class="checkboxes"> <%= b.check_box + b.label%> </span>
       <% end %>
-    <% end %>
-  </p>
-  <%= f.submit %>
-<% end %>
+      <br>
+      <% 5.times do %>
+        <%= f.fields_for :ingredients, @recipe.ingredients.build do |ingredients_fields| %>
+        <span class="fh-checkbox">
+          <%= ingredients_fields.label "Add ingredient" %>:
+          <%= ingredients_fields.text_field :name %>
+        </span>
+        <% end %>
+      <% end %>
+    </p>
+    <%= f.submit %>
+  <% end %>
+</div>
