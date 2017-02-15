@@ -1,9 +1,11 @@
-<h3>Highest rated recipes:</h3>
-<br>
-<div class= "list">
-  <ul class= "list">
-  <% Recipe.sort_by_average_score.each do |recipe| %>
-    <li class= "list"> <%= link_to recipe.name, recipe_path(recipe) %> Score: <%= recipe.average_score.round(2) %> </li>
-  <% end %>
-  </ul>
+<div class= "list_recipe container">
+  <h3 class="recipes">Highest rated recipes</h3>
+  <br>
+  <div class= "list">
+    <ul class= "list_recipes">
+    <% Recipe.sort_by_average_score.each do |recipe| %>
+      <li class= "list_ingredients"> <%= link_to recipe.name, recipe_path(recipe) %> Score: <%= recipe.average_score.round(2) %> </li>
+    <% end %>
+    </ul>
+  </div>
 </div>
