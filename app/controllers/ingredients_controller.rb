@@ -13,6 +13,11 @@ class IngredientsController < ApplicationController
     @ingredients = Ingredient.all.sort_by(&:name)
   end
 
+  def data
+    ingredient = Ingredient.find(params[:id])
+    render json: IngredientSerializer.serialize(ingredient)
+  end
+
   def new
     @ingredient = Ingredient.new
   end

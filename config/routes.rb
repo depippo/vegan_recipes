@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :show]
     get 'recipes/highest_rated', to: 'recipes#highest_rated'
     get '/users/:id/data', to: 'users#data'
+    get '/ingredients/:id/data', to: 'ingredients#data'
     resources :recipes do
       resources :comments
       resources :ratings, only: [:new, :create]
