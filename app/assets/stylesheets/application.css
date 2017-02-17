@@ -63,6 +63,20 @@ body {
   right: 20px;
 }
 
+
+.js-previous_nutrient {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+
+}
+
+.js-next_nutrient {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
 .photo {
   display: inline-block;
   background-color: white;
@@ -133,6 +147,16 @@ div.list_ingredient {
   margin-top: 30px;
   width: 500px;
   min-height: 600px;
+/*  border-style: ;
+  border-width: .5px;*/
+  box-shadow: 20px 20px 70px 0px #333333;
+}
+
+div.list_nutrient {
+  padding-top: 20px;
+  margin-top: 30px;
+  width: 500px;
+  min-height: 400px;
 /*  border-style: ;
   border-width: .5px;*/
   box-shadow: 20px 20px 70px 0px #333333;
