@@ -13,11 +13,10 @@ function nextNutrient(event) {
     $.get("/nutrients/" + nextId + ".json").success(function(json) {
       $(".nutrientName").text(json["name"]);
       if (json["ingredients"]) {
-        $(".nutrient_ingredients").empty();
+        $(".replace").empty();
         json["ingredients"].forEach(function(element){
-          $(".nutrient_ingredients").append('<li class="list"><a href="/ingredients/' + element.id + '">' + element.name + '</a></li>');
+          $(".replace").append('<li class="list_ingredients nutrient_ingredients"><a href="/ingredients/' + element.id + '">' + element.name + '</a></li>');
         })
-        // re-set the id to current on the link
         $(".js-next_nutrient").attr("data-id", json["id"]);
       }
     });
@@ -29,11 +28,10 @@ function previousNutrient(event) {
     $.get("/nutrients/" + nextId + ".json").success(function(json) {
       $(".nutrientName").text(json["name"]);
       if (json["ingredients"]) {
-        $(".nutrient_ingredients").empty();
+        $(".replace").empty();
         json["ingredients"].forEach(function(element){
-          $(".nutrient_ingredients").append('<li class="list"><a href="/ingredients/' + element.id + '">' + element.name + '</a></li>');
+          $(".replace").append('<li class="list_ingredients nutrient_ingredients"><a href="/ingredients/' + element.id + '">' + element.name + '</a></li>');
         })
-        // re-set the id to current on the link
         $(".js-next_nutrient").attr("data-id", json["id"]);
       }
     });

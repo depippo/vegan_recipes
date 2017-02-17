@@ -2,7 +2,7 @@
 <h3 class="recipes nutrientName"><%= @nutrient.name %> </h3>
 
   <h5 class="recipes">Found in these ingredients:</h5>
-  <ul class="list_recipes nutrient_ingredients">
+  <ul class="list_recipes nutrient_ingredients replace">
   <% @nutrient.ingredients.each do |ingredient| %>
     <li class="list_ingredients nutrient_ingredients"> <%= link_to ingredient.name, ingredient_path(ingredient) %> </li>
   <% end %>
