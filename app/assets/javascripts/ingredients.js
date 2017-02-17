@@ -30,13 +30,13 @@ function nextIngredient(event) {
     $.get("/ingredients/" + nextId + "/data").success(function(data) {
       $(".ingredientName").text(data["name"]);
       if (data["recipes"]) {
-        $(".ingredient_recipes").empty();
+        $(".recipe_replace").empty();
         data["recipes"].forEach(function(element){
-          $(".ingredient_recipes").append('<li class="list"><a href="/recipes/' + element.id + '">' + element.name + '</a></li>');
+          $(".recipe_replace").append('<li class="list_ingredients ingredient_recipes"><a href="/recipes/' + element.id + '">' + element.name + '</a></li>');
         })
-        $(".ingredient_nutrients").empty();
+        $(".nutrient_replace").empty();
         data["nutrients"].forEach(function(element){
-          $(".ingredient_nutrients").append('<li class="list"><a href="/nutrients/' + element.id + '">' + element.name + '</a></li>');
+          $(".nutrient_replace").append('<li class="list_ingredients ingredient_nutrients"><a href="/nutrients/' + element.id + '">' + element.name + '</a></li>');
         })
         // re-set the id to current on the link
         $(".js-next_ingredient").attr("data-id", data["id"]);
@@ -50,14 +50,14 @@ function previousIngredient(event) {
     $.get("/ingredients/" + nextId + "/data").success(function(data) {
       $(".ingredientName").text(data["name"]);
       if (data["recipes"]) {
-        $(".ingredient_recipes").empty();
+        $(".recipe_replace").empty();
         data["recipes"].forEach(function(element){
-          $(".ingredient_recipes").append('<li class="list"><a href="/recipes/' + element.id + '">' + element.name + '</a></li>');
+          $(".recipe_replace").append('<li class="list_ingredients ingredient_recipes"><a href="/recipes/' + element.id + '">' + element.name + '</a></li>');
         })
       if (data["nutrients"]) {
-        $(".ingredient_nutrients").empty();
+        $(".nutrient_replace").empty();
         data["nutrients"].forEach(function(element){
-          $(".ingredient_nutrients").append('<li class="list"><a href="/nutrients/' + element.id + '">' + element.name + '</a></li>');
+          $(".nutrient_replace").append('<li class="list_ingredients ingredient_nutrients"><a href="/nutrients/' + element.id + '">' + element.name + '</a></li>');
         })
       }
         // re-set the id to current on the link

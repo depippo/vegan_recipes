@@ -1,23 +1,19 @@
 <div class="list_ingredient container">
 <h3 class="recipes"><span class="ingredientName"><%= @ingredient.name %></span></h3>
 
-<% if !@ingredient.recipes.empty? %>
   <h5 class="recipes">Used in these recipes:</h5>
-  <ul class="list_recipes ingredient_recipes">
+  <ul class="list_recipes ingredient_recipes recipe_replace">
   <% @ingredient.recipes.each do |recipe| %>
     <li class="list_ingredients ingredient_recipes"> <%= link_to recipe.name, recipe_path(recipe) %> </li>
   <% end %>
   </ul>
-<% end %>
 
-<% if !@ingredient.nutrients.empty? %>
   <h5 class="recipes"> Contains these nutrients: </h5>
-  <ul class="list_recipes ingredient_nutrients">
+  <ul class="list_recipes ingredient_nutrients nutrient_replace">
   <% @ingredient.nutrients.each do |nutrient| %>
     <li class="list_ingredients ingredient_nutrients"> <%= link_to nutrient.name, nutrient_path(nutrient) %> </li>
   <% end %>
   </ul>
-<% end %>
 
 <h5 class="recipes">  <%= link_to "Edit this ingredient", edit_ingredient_path(@ingredient) %><h5>
 
