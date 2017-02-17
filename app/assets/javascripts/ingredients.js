@@ -12,7 +12,6 @@ function pageReady() {
 }
 
 function showNutrients(event, id) {
-  console.log("showNutrients");
   var ul = event.target.parentNode;
   var button = event.target;
   $.get("/ingredients/" + id + ".json").success(function(json) {

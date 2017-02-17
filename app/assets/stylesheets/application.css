@@ -28,6 +28,7 @@ body {
 }
 
 .container {
+  position: relative;
   margin-right: auto;
   margin-left: auto;
   padding-left: 10px;
@@ -38,16 +39,28 @@ body {
 
 .js-previous {
   position: absolute;
-  top: 690px;
-  left: 350px;
+  bottom: 50px;
+  left: 50px;
 
 }
 
 .js-next {
   position: absolute;
-  top: 690px;
-  left: 750px;
+  bottom: 50px;
+  right: 50px;
+}
 
+.js-previous_ingredient {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+
+}
+
+.js-next_ingredient {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
 }
 
 .photo {
@@ -110,6 +123,16 @@ div.list_user {
   margin-top: 30px;
   width: 500px;
   height: 600px;
+/*  border-style: ;
+  border-width: .5px;*/
+  box-shadow: 20px 20px 70px 0px #333333;
+}
+
+div.list_ingredient {
+  padding-top: 20px;
+  margin-top: 30px;
+  width: 500px;
+  min-height: 600px;
 /*  border-style: ;
   border-width: .5px;*/
   box-shadow: 20px 20px 70px 0px #333333;

@@ -1,4 +1,4 @@
-<div class="list_recipes container">
+<div class="list_ingredient container">
 <h3 class="recipes"><span class="ingredientName"><%= @ingredient.name %></span></h3>
 
 <% if !@ingredient.recipes.empty? %>
@@ -20,7 +20,9 @@
 <% end %>
 
 <h5 class="recipes">  <%= link_to "Edit this ingredient", edit_ingredient_path(@ingredient) %><h5>
-</div>
 
 <a href="#" class="js-previous_ingredient" data-id="<%=@ingredient.id%>">Previous Ingredient</a>
+
 <a href="#" class="js-next_ingredient" data-id="<%=@ingredient.id%>">Next Ingredient</a>
+
+</div>
