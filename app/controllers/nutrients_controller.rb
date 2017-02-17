@@ -3,6 +3,10 @@ class NutrientsController < ApplicationController
 
   def show
     @nutrient = Nutrient.find(params[:id])
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render json: @nutrient }
+    end
   end
 
   def index

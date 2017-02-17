@@ -1,10 +1,15 @@
 <div class="list_recipes container">
-<h3 class="recipes"><%= @nutrient.name %> </h3>
+<h3 class="recipes nutrientName"><%= @nutrient.name %> </h3>
 
   <h5 class="recipes">Found in these ingredients:</h5>
-  <ul class="list_recipes">
+  <ul class="list_recipes nutrient_ingredients">
   <% @nutrient.ingredients.each do |ingredient| %>
-    <li class="list_ingredients"> <%= link_to ingredient.name, ingredient_path(ingredient) %> </li>
+    <li class="list_ingredients nutrient_ingredients"> <%= link_to ingredient.name, ingredient_path(ingredient) %> </li>
   <% end %>
   </ul>
+
+  <a href="#" class="js-previous_nutrient" data-id="<%=@nutrient.id%>">Previous Nutrient</a>
+
+  <a href="#" class="js-next_nutrient" data-id="<%=@nutrient.id%>">Next Nutrient</a>
+
 </div>
