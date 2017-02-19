@@ -15,7 +15,6 @@ function showNutrients(event, id) {
   var ul = event.target.parentNode;
   var button = event.target;
   $.get("/ingredients/" + id + ".json").success(function(json) {
-    console.log(json.nutrients.length);
     if (json.nutrients.length > 0) {
       $(button).hide();
       json.nutrients.forEach(function(nutrient){
